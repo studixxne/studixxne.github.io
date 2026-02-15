@@ -1,6 +1,6 @@
 ---
-title: [논문 리뷰] Deep Residual Learning for Image Recognition
-tags: 인공지능
+title: "[논문 리뷰] Deep Residual Learning for Image Recognition"
+tags: "인공지능"
 ---
 
 **원 논문:** <https://arxiv.org/abs/1512.03385>
