@@ -12,10 +12,11 @@ comments: true
 
 ### Introduction
 Network의 표현력은 Stacked Layer의 깊이가 깊어질수록 풍부해진다.  
- Feature들을 레이어들이 더 많이 분리할 수 있기 때문이다.  
- 실제로 이전까지 ImageNet Challenge에서 VGG같은 깊은 신경망이 성능이 더 좋다는 것을 보여주고 있었다.
+Feature들을 레이어들이 더 많이 분리할 수 있기 때문이다.  
+실제로 이전까지 ImageNet Challenge에서 VGG같은 깊은 신경망이 성능이 더 좋다는 것을 보여주고 있었다.
 
 '그렇다면 Depth의 중요성에 따라 더 많은 Layer들을 쌓으면 쌓을수록 더 나은 네트워크가 될 수 있을까?'  
+<!--more-->
 이 질문으로부터 이 논문이 시작하게 된다.  
 
 하지만 이러한 질문에 대해서 문제점이 존재한다.

@@ -120,13 +120,7 @@ sharing:
 ##############################
 comments:
   provider: "custom" # false (default), "disqus", "gitalk", "valine", "custom"
-
-  utterances:
-    repo: "studixxne/studixxne.github.io"
-    issue_term: "pathname"
-    theme: "github-light"
-    label: "comment"
-
+  
   ## Disqus
   disqus:
     shortname: # the Disqus shortname for the site
@@ -215,11 +209,11 @@ defaults:
     values:
       layout: article
       sharing: true
-      license: true
+      license: false
       aside:
         toc: true
       show_edit_on_github: true
-      show_subscribe: true
+      show_subscribe: false
       pageview: true
 
 
