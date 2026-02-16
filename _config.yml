@@ -72,9 +72,10 @@ paths:
 ##############################
 ## excerpt
 excerpt_separator: <!--more-->
+excerpt_type: html
 
 ## license
-license: CC-BY-NC-4.0 # "CC-BY-4.0", "CC-BY-SA-4.0", "CC-BY-NC-4.0", "CC-BY-ND-4.0"
+license:  # "CC-BY-4.0", "CC-BY-SA-4.0", "CC-BY-NC-4.0", "CC-BY-ND-4.0"
 
 ## TOC
 toc:
@@ -118,7 +119,7 @@ sharing:
 ## => Comments
 ##############################
 comments:
-  provider: "utterances" # false (default), "disqus", "gitalk", "valine", "custom"
+  provider: "custom" # false (default), "disqus", "gitalk", "valine", "custom"
 
   utterances:
     repo: "studixxne/studixxne.github.io"
