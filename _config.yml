@@ -72,7 +72,7 @@ paths:
 ##############################
 ## excerpt
 excerpt_separator: <!--more-->
-excerpt_type: html
+excerpt_type: "html"
 
 ## license
 license:  # "CC-BY-4.0", "CC-BY-SA-4.0", "CC-BY-NC-4.0", "CC-BY-ND-4.0"
@@ -212,7 +212,7 @@ defaults:
       license: false
       aside:
         toc: true
-      show_edit_on_github: true
+      show_edit_on_github: false
       show_subscribe: false
       pageview: true
 
