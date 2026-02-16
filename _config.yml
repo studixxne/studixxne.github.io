@@ -28,7 +28,7 @@ description: > # this means to ignore newlines until "Language & timezone"
 ## => Language and Timezone
 ##############################
 lang: # the language of your site, default as "en"
-timezone: # see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for the available values
+timezone: Asia/Seoul # see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for the available values
 
 
 ## => Author and Social
@@ -85,7 +85,7 @@ toc:
 ##############################
 ## Mathjax
 mathjax: true # false (default), true
-mathjax_autoNumber: # false (default), true
+mathjax_autoNumber: true # false (default), true
 
 ## Mermaid
 mermaid: # false (default), true
@@ -118,7 +118,13 @@ sharing:
 ## => Comments
 ##############################
 comments:
-  provider: false # false (default), "disqus", "gitalk", "valine", "custom"
+  provider: "utterances" # false (default), "disqus", "gitalk", "valine", "custom"
+
+  utterances:
+    repo: "studixxne/studixxne.github.io"
+    issue_term: "pathname"
+    theme: "github-light"
+    label: "comment"
 
   ## Disqus
   disqus:
