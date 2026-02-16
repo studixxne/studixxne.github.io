@@ -1,6 +1,8 @@
 ---
 title: "[논문 리뷰] Deep Residual Learning for Image Recognition"
-tags: "인공지능"
+categories: Paper Review
+tags: 인공지능 CV PyTorch
+comments: true
 ---
 
 **원 논문:** <https://arxiv.org/abs/1512.03385>
