@@ -59,7 +59,7 @@
           <div class="item__description">
             {%- if _article.excerpt and include.show_excerpt -%}
               <div class="article__content" itemprop="description articleBody">
-                {{ _article.excerpt | truncate: 300 }}
+                {{ _article.excerpt | truncate: 350 }}
               </div>
             {%- endif -%}
             {%- if include.show_readmore -%}
