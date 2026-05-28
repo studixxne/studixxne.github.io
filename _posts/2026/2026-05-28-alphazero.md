@@ -10,7 +10,6 @@ comment: true
 딥러닝을 배우고 처음으로 진행하는 프로젝트로 AlphaZero로 보드게임 AI를 만들어 보았다. 결과적으로는 SOTA 모델을 만들어내는 데 성공하였다.  
 
 적용한 Task는 tvn의 서바이벌 예능 프로그램 '더 지니어스'에서 나온 '십이장기'라는 게임인데, 간단하게 설명하자면 4*3로 축소한 장기이다. 자세한 규칙은 [링크](https://namu.wiki/w/%EC%8B%AD%EC%9D%B4%EC%9E%A5%EA%B8%B0)를 참조하자.  
-<!--more-->
 
 학창 시절에 알파고를 감명깊게 보기도 했고, 데미스 하사비스를 롤모델로 삼으며 강화학습에 큰 관심을 가졌었기에 AlphaZero를 직접 만들어보겠다고 결정했다. 십이장기도 마찬가지로 학창 시절에 몰입하면서 보던 프로그램이 더 지니어스였기 때문에 결과적으로 AlphaZero 십이장기 AI 제작에 대한 동기가 되었다.  
 
@@ -39,7 +38,7 @@ Pure MCTS를 요약하면 무작위 샘플링을 통해서 Simulation을 진행�
 
 AlphaZero의 MCTS는 다음과 같다.
 
-![MCTS](/post_image/2026/0527/image1.png)
+![MCTS](/post_image/2026/0528/image1.png)
 
 **(1) Select**  
 루트 노드에서 시작해서 PUCT을 최대화하는 Action을 선택하면서 하위 노드로 내려간다.
@@ -76,7 +75,7 @@ $$
 
 #### Self-Play
 
-![SelfPlay](/post_image/2026/0527/image2.png)  
+![SelfPlay](/post_image/2026/0528/image2.png)  
 
 Self-Play는 실제로 에이전트가 직접 플레이를 하면서 학습 데이터를 축적하는 단계다. 매 턴마다 MCTS를 통해 $\mathbf{\pi}_t$를 얻어내고 이를 바탕으로 $\mathbf{a}_t$를 선택한다.  
 
@@ -85,7 +84,7 @@ Self-Play는 실제로 에이전트가 직접 플레이를 하면서 학습 데�
 
 #### Neural Network Training
 
-![Training](/post_image/2026/0527/image3.png)  
+![Training](/post_image/2026/0528/image3.png)  
 
 Self-Play 과정에서 얻어낸 ($s_t$, $\pi_t$, $z_t$)를 통해 신경망($f_\theta)$을 학습시킬 수 있으며 loss는 다음과 같다.
 
@@ -302,15 +301,15 @@ def get_tensor(self, state_list):
 
 Evaluation은 Rollout 횟수 1000의 Pure MCTS를 기준으로 승률을 평가하였다.  
 
-![win_rate](/post_image/2026/0527/image4.png)
+![win_rate](/post_image/2026/0528/image4.png)
 
 약 **28K의 Self-Play**를 통해서 **Pure MCTS를 상대로 승률 100%를 달성**하였고 이에 따라 학습을 종료하였다.  
 
 실제로 플레이해본 결과 AI는 압도적인 성능을 자랑했다. 직접 플레이했을 때는 단 한 판도 이겨보지 못하였으며, 온라인 커뮤니티에서 **실제 유저들과 대결했을 때도 대부분의 사람을 상대로 전승(무승부 제외, 승률 100%)을 기록**했다.
 
-![react1](/post_image/2026/0527/image5.png)
+![react1](/post_image/2026/0528/image5.png)
 
-![react2](/post_image/2026/0527/image6.png)
+![react2](/post_image/2026/0528/image6.png)
 
 개인적으로 당시 최강자 라인에게 이런 반응을 들었을 때 엄청난 뽕을 느꼈다..  
 물론 이기지는 못하고 작은 Task 특성 상 반복수로 인하여 3판 무승부로 게임이 끝났다.  
@@ -345,11 +344,11 @@ AlphaZero에서는 Dirichlet Noise를 통해서 Exploration를 유도하지만 S
 
 - **Undertrained Model 예시**  
 예를 들어 왕이 승리를 위해 상대 진영으로 돌진하기 좋은 위치에 존재할 경우, 신경망은 직관에 따라 value를 매우 높게 평가하며 돌진하려고 하지만 실질적으로는 왕이 공격 당하면서 필패수가 되어버리는 상황이 발생하게 되는 것이다.  
-![move1](/post_image/2026/0527/image7.png)  
-![move2](/post_image/2026/0527/image8.png)  
-![move3](/post_image/2026/0527/image9.png)  
-![move4](/post_image/2026/0527/image10.png)  
-![log](/post_image/2026/0527/image11.png)  
+![move1](/post_image/2026/0528/image7.png)  
+![move2](/post_image/2026/0528/image8.png)  
+![move3](/post_image/2026/0528/image9.png)  
+![move4](/post_image/2026/0528/image10.png)  
+![log](/post_image/2026/0528/image11.png)  
 
   *19번째 수에서 최적은 (2, a) to (1, a)이고 (2, a) to (3, a)는 필패수지만 모델을 이를 예측하지 못했고, 상대가 실제로 반격수를 두자 뒤늦게 필패를 예측했다*
 
